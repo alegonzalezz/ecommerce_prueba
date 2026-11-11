@@ -21,6 +21,8 @@
     "probar:pages": "node scripts/probar-pages.mjs"
   },
   "devDependencies": {
+    "@emnapi/core": "1.11.3",
+    "@emnapi/runtime": "1.11.3",
     "ajv": "^8.20.0",
     "sharp": "^0.35.5"
   },
