@@ -1,0 +1,489 @@
+{
+  "productos": [
+    {
+      "id": "tal-001",
+      "slug": "taladro-percutor-13mm",
+      "nombre": "Taladro percutor 13 mm 750 W",
+      "descripcionCorta": "Potente y liviano para hormigón, madera y metal.",
+      "descripcion": "Taladro percutor de 750 W con mandril de 13 mm, velocidad variable y reversa. Incluye empuñadura lateral y tope de profundidad.",
+      "precio": 89900,
+      "precioAnterior": null,
+      "moneda": "ARS",
+      "categoria": "herramientas-electricas",
+      "marca": "Forjar",
+      "sku": "FOR-TAL-750",
+      "stock": 14,
+      "etiquetas": [
+        "profesional"
+      ],
+      "atributos": {
+        "potencia": "750 W",
+        "mandril": "13 mm",
+        "cable": "3 m"
+      },
+      "fechaAlta": "2026-06-12",
+      "activo": true,
+      "imagenes": {
+        "card": {
+          "src": "/img/productos/tal-001-card.webp",
+          "alt": "Taladro percutor 13 mm 750 W"
+        },
+        "mobile": {
+          "src": "/img/productos/tal-001-mobile.webp",
+          "alt": "Taladro percutor 13 mm 750 W"
+        },
+        "desktop": {
+          "src": "/img/productos/tal-001-desktop.webp",
+          "alt": "Taladro percutor 13 mm 750 W"
+        }
+      }
+    },
+    {
+      "id": "ama-001",
+      "slug": "amoladora-angular-115mm",
+      "nombre": "Amoladora angular 115 mm 850 W",
+      "descripcionCorta": "Corta y desbasta con arranque suave.",
+      "descripcion": "Amoladora angular de 850 W para discos de 115 mm. Protector regulable, empuñadura lateral antivibración y botón de bloqueo de eje.",
+      "precio": 74500,
+      "precioAnterior": 89900,
+      "moneda": "ARS",
+      "categoria": "herramientas-electricas",
+      "marca": "Forjar",
+      "sku": "FOR-AMO-850",
+      "stock": 9,
+      "etiquetas": [
+        "oferta"
+      ],
+      "atributos": {
+        "potencia": "850 W",
+        "disco": "115 mm",
+        "rpm": "11000"
+      },
+      "fechaAlta": "2026-05-03",
+      "activo": true,
+      "imagenes": {
+        "card": {
+          "src": "/img/productos/ama-001-card.webp",
+          "alt": "Amoladora angular 115 mm 850 W"
+        },
+        "mobile": {
+          "src": "/img/productos/ama-001-mobile.webp",
+          "alt": "Amoladora angular 115 mm 850 W"
+        },
+        "desktop": {
+          "src": "/img/productos/ama-001-desktop.webp",
+          "alt": "Amoladora angular 115 mm 850 W"
+        }
+      }
+    },
+    {
+      "id": "mar-001",
+      "slug": "martillo-carpintero-500g",
+      "nombre": "Martillo de carpintero 500 g",
+      "descripcionCorta": "Mango de fibra con grip antideslizante.",
+      "descripcion": "Martillo de carpintero con cabeza de acero forjado de 500 g, uña curva y mango de fibra de vidrio con empuñadura de goma.",
+      "precio": 12900,
+      "precioAnterior": null,
+      "moneda": "ARS",
+      "categoria": "herramientas-manuales",
+      "marca": "Aljibe",
+      "sku": "ALJ-MAR-500",
+      "stock": 40,
+      "etiquetas": [],
+      "atributos": {
+        "peso": "500 g",
+        "mango": "fibra de vidrio"
+      },
+      "fechaAlta": "2026-04-18",
+      "activo": true,
+      "imagenes": {
+        "card": {
+          "src": "/img/productos/mar-001-card.webp",
+          "alt": "Martillo de carpintero 500 g"
+        },
+        "mobile": {
+          "src": "/img/productos/mar-001-mobile.webp",
+          "alt": "Martillo de carpintero 500 g"
+        },
+        "desktop": {
+          "src": "/img/productos/mar-001-desktop.webp",
+          "alt": "Martillo de carpintero 500 g"
+        }
+      }
+    },
+    {
+      "id": "des-001",
+      "slug": "set-destornilladores-12-piezas",
+      "nombre": "Set de destornilladores 12 piezas",
+      "descripcionCorta": "Punta imantada, estuche incluido.",
+      "descripcion": "Juego de 12 destornilladores Phillips, planos y Torx con puntas imantadas y mangos ergonómicos. Viene en estuche plástico.",
+      "precio": 15800,
+      "precioAnterior": 19500,
+      "moneda": "ARS",
+      "categoria": "herramientas-manuales",
+      "marca": "Aljibe",
+      "sku": "ALJ-DES-12",
+      "stock": 25,
+      "etiquetas": [
+        "oferta"
+      ],
+      "atributos": {
+        "piezas": "12",
+        "puntas": "Phillips, plana, Torx"
+      },
+      "fechaAlta": "2026-03-22",
+      "activo": true,
+      "imagenes": {
+        "card": {
+          "src": "/img/productos/des-001-card.webp",
+          "alt": "Set de destornilladores 12 piezas"
+        },
+        "mobile": {
+          "src": "/img/productos/des-001-mobile.webp",
+          "alt": "Set de destornilladores 12 piezas"
+        },
+        "desktop": {
+          "src": "/img/productos/des-001-desktop.webp",
+          "alt": "Set de destornilladores 12 piezas"
+        }
+      }
+    },
+    {
+      "id": "llv-001",
+      "slug": "juego-llaves-combinadas-8-22",
+      "nombre": "Juego de llaves combinadas 8 a 22 mm",
+      "descripcionCorta": "12 piezas en acero cromo vanadio.",
+      "descripcion": "Juego de 12 llaves combinadas de 8 a 22 mm en acero cromo vanadio, acabado cromado espejo y bolso de tela con cierre.",
+      "precio": 38900,
+      "precioAnterior": null,
+      "moneda": "ARS",
+      "categoria": "herramientas-manuales",
+      "marca": "Mangrullo",
+      "sku": "MAN-LLV-12",
+      "stock": 0,
+      "etiquetas": [
+        "nuevo"
+      ],
+      "atributos": {
+        "piezas": "12",
+        "medidas": "8 a 22 mm",
+        "material": "cromo vanadio"
+      },
+      "fechaAlta": "2026-11-02",
+      "activo": true,
+      "imagenes": {
+        "card": {
+          "src": "/img/productos/llv-001-card.webp",
+          "alt": "Juego de llaves combinadas 8 a 22 mm"
+        },
+        "mobile": {
+          "src": "/img/productos/llv-001-mobile.webp",
+          "alt": "Juego de llaves combinadas 8 a 22 mm"
+        },
+        "desktop": {
+          "src": "/img/productos/llv-001-desktop.webp",
+          "alt": "Juego de llaves combinadas 8 a 22 mm"
+        }
+      }
+    },
+    {
+      "id": "tor-001",
+      "slug": "tornillos-autoperforantes-500",
+      "nombre": "Tornillos autoperforantes x500",
+      "descripcionCorta": "Caja de 500 unidades, punta mecha.",
+      "descripcion": "Caja con 500 tornillos autoperforantes Phillips de 4,2 x 25 mm con punta mecha, zincados. Para chapa y perfiles de acero.",
+      "precio": 8700,
+      "precioAnterior": 9900,
+      "moneda": "ARS",
+      "categoria": "fijaciones",
+      "marca": "Mangrullo",
+      "sku": "MAN-TOR-500",
+      "stock": 120,
+      "etiquetas": [
+        "oferta"
+      ],
+      "atributos": {
+        "cantidad": "500 u",
+        "medida": "4,2 x 25 mm",
+        "acabado": "zincado"
+      },
+      "fechaAlta": "2026-02-10",
+      "activo": true,
+      "imagenes": {
+        "card": {
+          "src": "/img/productos/tor-001-card.webp",
+          "alt": "Tornillos autoperforantes x500"
+        },
+        "mobile": {
+          "src": "/img/productos/tor-001-mobile.webp",
+          "alt": "Tornillos autoperforantes x500"
+        },
+        "desktop": {
+          "src": "/img/productos/tor-001-desktop.webp",
+          "alt": "Tornillos autoperforantes x500"
+        }
+      }
+    },
+    {
+      "id": "tar-001",
+      "slug": "tarugos-nylon-8mm-x100",
+      "nombre": "Tarugos de nylon 8 mm x100",
+      "descripcionCorta": "Para pared de ladrillo y hormigón.",
+      "descripcion": "Pack de 100 tarugos de nylon de 8 mm con aleta antigiro. Resisten cargas medias en mampostería maciza y hueca.",
+      "precio": 3200,
+      "precioAnterior": null,
+      "moneda": "ARS",
+      "categoria": "fijaciones",
+      "marca": "Mangrullo",
+      "sku": "MAN-TAR-8",
+      "stock": 300,
+      "etiquetas": [
+        "nuevo"
+      ],
+      "atributos": {
+        "cantidad": "100 u",
+        "diametro": "8 mm"
+      },
+      "fechaAlta": "2026-10-27",
+      "activo": true,
+      "imagenes": {
+        "card": {
+          "src": "/img/productos/tar-001-card.webp",
+          "alt": "Tarugos de nylon 8 mm x100"
+        },
+        "mobile": {
+          "src": "/img/productos/tar-001-mobile.webp",
+          "alt": "Tarugos de nylon 8 mm x100"
+        },
+        "desktop": {
+          "src": "/img/productos/tar-001-desktop.webp",
+          "alt": "Tarugos de nylon 8 mm x100"
+        }
+      }
+    },
+    {
+      "id": "can-001",
+      "slug": "canilla-bronce-media-cromada",
+      "nombre": "Canilla de bronce 1/2\" cromada",
+      "descripcionCorta": "Cuerpo de bronce con cierre cerámico.",
+      "descripcion": "Canilla de paso de 1/2 pulgada con cuerpo de bronce, cromado resistente y cierre cerámico de un cuarto de vuelta.",
+      "precio": 11500,
+      "precioAnterior": 14200,
+      "moneda": "ARS",
+      "categoria": "plomeria",
+      "marca": "Cobre Sur",
+      "sku": "CSU-CAN-12",
+      "stock": 33,
+      "etiquetas": [
+        "oferta"
+      ],
+      "atributos": {
+        "rosca": "1/2\"",
+        "material": "bronce",
+        "cierre": "cerámico"
+      },
+      "fechaAlta": "2026-01-30",
+      "activo": true,
+      "imagenes": {
+        "card": {
+          "src": "/img/productos/can-001-card.webp",
+          "alt": "Canilla de bronce 1/2\" cromada"
+        },
+        "mobile": {
+          "src": "/img/productos/can-001-mobile.webp",
+          "alt": "Canilla de bronce 1/2\" cromada"
+        },
+        "desktop": {
+          "src": "/img/productos/can-001-desktop.webp",
+          "alt": "Canilla de bronce 1/2\" cromada"
+        }
+      }
+    },
+    {
+      "id": "tef-001",
+      "slug": "cinta-teflon-12mm-pack-10",
+      "nombre": "Cinta de teflón 12 mm pack x10",
+      "descripcionCorta": "Sellado de roscas, 10 m cada rollo.",
+      "descripcion": "Pack de 10 rollos de cinta de teflón de 12 mm por 10 m. Sella roscas de agua y gas sin pegamentos.",
+      "precio": 4200,
+      "precioAnterior": null,
+      "moneda": "ARS",
+      "categoria": "plomeria",
+      "marca": "Cobre Sur",
+      "sku": "CSU-TEF-10",
+      "stock": 150,
+      "etiquetas": [
+        "nuevo"
+      ],
+      "atributos": {
+        "rollos": "10",
+        "ancho": "12 mm",
+        "largo": "10 m"
+      },
+      "fechaAlta": "2026-10-20",
+      "activo": true,
+      "imagenes": {
+        "card": {
+          "src": "/img/productos/tef-001-card.webp",
+          "alt": "Cinta de teflón 12 mm pack x10"
+        },
+        "mobile": {
+          "src": "/img/productos/tef-001-mobile.webp",
+          "alt": "Cinta de teflón 12 mm pack x10"
+        },
+        "desktop": {
+          "src": "/img/productos/tef-001-desktop.webp",
+          "alt": "Cinta de teflón 12 mm pack x10"
+        }
+      }
+    },
+    {
+      "id": "pin-001",
+      "slug": "latex-interior-lavable-20l",
+      "nombre": "Látex interior lavable blanco 20 L",
+      "descripcionCorta": "Cubritivo alto, terminación mate.",
+      "descripcion": "Pintura látex para interiores, lavable, antihongos y de alto poder cubritivo. Terminación mate. Rinde hasta 300 m² por balde.",
+      "precio": 79900,
+      "precioAnterior": 96000,
+      "moneda": "ARS",
+      "categoria": "pintura",
+      "marca": "Pampa Color",
+      "sku": "PCO-LAT-20",
+      "stock": 11,
+      "etiquetas": [
+        "oferta"
+      ],
+      "atributos": {
+        "contenido": "20 L",
+        "terminacion": "mate",
+        "rendimiento": "hasta 300 m²"
+      },
+      "fechaAlta": "2026-02-27",
+      "activo": true,
+      "imagenes": {
+        "card": {
+          "src": "/img/productos/pin-001-card.webp",
+          "alt": "Látex interior lavable blanco 20 L"
+        },
+        "mobile": {
+          "src": "/img/productos/pin-001-mobile.webp",
+          "alt": "Látex interior lavable blanco 20 L"
+        },
+        "desktop": {
+          "src": "/img/productos/pin-001-desktop.webp",
+          "alt": "Látex interior lavable blanco 20 L"
+        }
+      }
+    },
+    {
+      "id": "rod-001",
+      "slug": "rodillo-lana-22cm",
+      "nombre": "Rodillo de lana 22 cm con cabo",
+      "descripcionCorta": "Para paredes, pelo medio.",
+      "descripcion": "Rodillo de lana de pelo medio de 22 cm con cabo reforzado. Retiene carga de pintura y deja terminación pareja.",
+      "precio": 6900,
+      "precioAnterior": null,
+      "moneda": "ARS",
+      "categoria": "pintura",
+      "marca": "Pampa Color",
+      "sku": "PCO-ROD-22",
+      "stock": 60,
+      "etiquetas": [
+        "nuevo"
+      ],
+      "atributos": {
+        "ancho": "22 cm",
+        "pelo": "medio"
+      },
+      "fechaAlta": "2026-11-05",
+      "activo": true,
+      "imagenes": {
+        "card": {
+          "src": "/img/productos/rod-001-card.webp",
+          "alt": "Rodillo de lana 22 cm con cabo"
+        },
+        "mobile": {
+          "src": "/img/productos/rod-001-mobile.webp",
+          "alt": "Rodillo de lana 22 cm con cabo"
+        },
+        "desktop": {
+          "src": "/img/productos/rod-001-desktop.webp",
+          "alt": "Rodillo de lana 22 cm con cabo"
+        }
+      }
+    },
+    {
+      "id": "gua-001",
+      "slug": "guantes-cuero-vaqueta",
+      "nombre": "Guantes de seguridad de cuero vaqueta",
+      "descripcionCorta": "Refuerzo en palma, par.",
+      "descripcion": "Guantes de cuero vaqueta con refuerzo en palma y puño elástico. Comodidad y protección para trabajos de obra y taller.",
+      "precio": 5400,
+      "precioAnterior": null,
+      "moneda": "ARS",
+      "categoria": "seguridad",
+      "marca": "Ñandú",
+      "sku": "NAN-GUA-L",
+      "stock": 80,
+      "etiquetas": [
+        "nuevo"
+      ],
+      "atributos": {
+        "talle": "L",
+        "material": "cuero vaqueta"
+      },
+      "fechaAlta": "2026-10-30",
+      "activo": true,
+      "imagenes": {
+        "card": {
+          "src": "/img/productos/gua-001-card.webp",
+          "alt": "Guantes de seguridad de cuero vaqueta"
+        },
+        "mobile": {
+          "src": "/img/productos/gua-001-mobile.webp",
+          "alt": "Guantes de seguridad de cuero vaqueta"
+        },
+        "desktop": {
+          "src": "/img/productos/gua-001-desktop.webp",
+          "alt": "Guantes de seguridad de cuero vaqueta"
+        }
+      }
+    }
+  ],
+  "carruseles": [
+    {
+      "id": "mas-vendido",
+      "nombre": "Lo más vendido",
+      "productos": [
+        "tal-001",
+        "ama-001",
+        "mar-001",
+        "tor-001",
+        "des-001",
+        "pin-001"
+      ]
+    },
+    {
+      "id": "nuevo",
+      "nombre": "Lo nuevo",
+      "productos": [
+        "llv-001",
+        "tar-001",
+        "tef-001",
+        "rod-001",
+        "gua-001"
+      ]
+    },
+    {
+      "id": "con-descuento",
+      "nombre": "Con descuento",
+      "productos": [
+        "ama-001",
+        "des-001",
+        "tor-001",
+        "can-001",
+        "pin-001"
+      ]
+    }
+  ]
+}
