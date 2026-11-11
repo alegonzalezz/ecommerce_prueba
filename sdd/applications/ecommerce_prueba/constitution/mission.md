@@ -17,4 +17,4 @@ Tienda online de **productos físicos**. `[PROPUESTA]` dicho por el usuario el 2
 - No tiene relación con `prueba_pagina`. `[PROPUESTA]` dicho por el usuario el 2026-11-10.
 
 ## Estado actual del repo
-El repo git no tiene commits. Contiene `sdd/` (documentación) y, desde el 2026-11-10, el código de la landing de ferretería (Nuxt + PrimeVue, catálogo en JSON). pagar el carrito con Mercado Pago en sandbox (probado contra un simulado; falta la prueba con credenciales reales). No hay envíos, mails de confirmación, registro de pedidos ni descuento de stock. `[VERIFICADO]` `git log`; listado de `app/`, `data/`, `scripts/`.
+El repo git no tiene commits. Contiene `sdd/` (documentación) y, desde el 2026-11-10, el código de la landing de ferretería (Nuxt + PrimeVue, catálogo en JSON). pagar el carrito con Mercado Pago en sandbox (probado contra un simulado; falta la prueba con credenciales reales). No hay envíos, mails de confirmación, registro de pedidos ni descuento de stock. Hay una versión estática de demostración, sin pago, publicada en https://alegonzalezz.github.io/ecommerce_prueba/. `[VERIFICADO]` `git log`; listado de `app/`, `data/`, `scripts/`.

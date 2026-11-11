@@ -2,7 +2,7 @@
 slug: 2026-11-10-github-pages
 title: Publicar la tienda como sitio estático en GitHub Pages (sin pago)
 author: agonzalezz
-status: en desarrollo                   # borrador | aprobada | en desarrollo | en QA | en producción | descartada
+status: en producción                    # borrador | aprobada | en desarrollo | en QA | en producción | descartada
 apps:
   - name: ecommerce_prueba
     why: Es la tienda; hay que poder construirla como sitio estático y publicarla en Pages

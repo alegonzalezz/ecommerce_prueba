@@ -16,6 +16,8 @@
 - Lo que se cobra lo calcula el servidor desde el catálogo; del navegador solo se aceptan ids y cantidades. `[VERIFICADO]` `npm run probar:pago`
 - El estado de un pago se le pregunta a Mercado Pago; la URL de retorno no es prueba de nada. `[VERIFICADO]` `npm run probar:pago-navegador`
 - El carrito se vacía únicamente con un pago aprobado. `[VERIFICADO]` prueba de mutación
+- Todo lo que la tienda escribe con una ruta propia respeta la subcarpeta de publicación; la prueba de navegador falla ante cualquier recurso propio con error. `[VERIFICADO]` `npm run probar:pages`
+- Lo que no puede funcionar sin servidor (el pago) se desactiva con un aviso claro en vez de fingir que anda. `[VERIFICADO]` `NUXT_PUBLIC_PAGO_DISPONIBLE`
 - Las páginas personales (`/carrito`, `/compra/resultado`) llevan `noindex` y quedan fuera del sitemap y de `llms.txt`. `[VERIFICADO]` `npm run verificar:seo`
 
 ## Candidatas a constraint (el equipo decide si pasan a `constraints.md`)

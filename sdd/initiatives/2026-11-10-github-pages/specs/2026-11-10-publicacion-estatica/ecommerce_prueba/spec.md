@@ -3,7 +3,7 @@
 - **Fecha:** 2026-11-10
 - **Autor:** agonzalezz
 - **Iniciativa:** `initiatives/2026-11-10-github-pages/initiative.md`
-- **Estado:** aprobada   <!-- borrador | en revisión | aprobada | implementada | descartada -->
+- **Estado:** implementada   <!-- borrador | en revisión | aprobada | implementada | descartada -->
 - **Plan:** [plan.md](plan.md) · **Tareas:** [tasks.md](tasks.md)
 
 > Aprobada por el usuario el 2026-11-10 ("Versión estática en Pages, sin pago"). Ninguna tarea de código arranca con esta spec en estado `borrador`.
@@ -38,4 +38,4 @@ Solo Argentina.
 - Repositorio en GitHub con Pages habilitado desde Actions.
 
 ## Preguntas abiertas de esta spec
-- Si Pages resuelve bien las URLs sin barra final cuando existe `x.html`: se confirma contra el sitio real.
+- Resuelta: Pages sirve `x.html` como `/x` (200) y responde 404 a `/x/`; los enlaces propios nunca llevan barra final. `[VERIFICADO]` contra el sitio real.

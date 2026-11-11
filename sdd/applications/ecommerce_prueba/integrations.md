@@ -59,3 +59,14 @@ Variables: `NUXT_MERCADOPAGO_ACCESS_TOKEN` (secreto, solo servidor), `NUXT_MERCA
 - El servidor ignora precios y totales del navegador, rechaza URLs de pago que no sean de Mercado Pago y limita los pedidos por IP. `[VERIFICADO]`
 - El estado del pago se consulta a Mercado Pago; lo que diga la URL de retorno no cuenta. `[VERIFICADO]`
 
+## GitHub Pages (publicación estática)
+Estado al 2026-11-10: publicado en https://alegonzalezz.github.io/ecommerce_prueba/ (repositorio público `alegonzalezz/ecommerce_prueba`, Pages con fuente "GitHub Actions"). `[VERIFICADO]`
+
+| Dato | Evidencia |
+|---|---|
+| Sitio de proyecto bajo la subcarpeta `/ecommerce_prueba/` | URL real `[VERIFICADO]` |
+| `/x` sirve `x.html` (200); `/x/` da 404; un slug inexistente da 404 con la página de la tienda; las respuestas llevan `cache-control: max-age=600` | `curl` al sitio real `[VERIFICADO]` |
+| Solo archivos estáticos: sin rutas de servidor, por lo que no hay pago ni consulta de estado | `[INFERIDO]` del límite de Pages; confirmado porque ninguna ruta `/api/*` existe en el sitio |
+| `robots.txt`, `sitemap.xml` y `llms.txt` quedan bajo la subcarpeta; los buscadores solo leen `robots.txt` en la raíz del dominio (`https://alegonzalezz.github.io/robots.txt`, que no es nuestro) | `[INFERIDO]`; ver Q-35 |
+| El workflow usa `actions/checkout@v4`, `configure-pages@v5`, `setup-node@v4` (Node 24), `upload-pages-artifact@v3` y `deploy-pages@v4` | `.github/workflows/deploy-pages.yml` `[VERIFICADO]` |
+

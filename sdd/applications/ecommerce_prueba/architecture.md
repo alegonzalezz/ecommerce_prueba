@@ -31,9 +31,11 @@ Estado al 2026-11-10: landing, ficha de producto con SEO para buscadores y asist
 | `app/pages/compra/resultado.vue` | Página de vuelta de Mercado Pago (noindex): verifica el estado y vacía el carrito solo si se aprobó | `[VERIFICADO]` |
 | `scripts/mercadopago-simulado.mjs` | Mercado Pago de mentira para probar sin credenciales (`npm run mercadopago:simulado`) | `[VERIFICADO]` |
 | `scripts/probar-pago.mjs`, `scripts/probar-pago-navegador.mjs`, `scripts/lib/` | Pruebas de las rutas de pago (74) y del flujo en Chrome (53), con la app construida | `[VERIFICADO]` `npm run probar:pago`, `npm run probar:pago-navegador` |
+| `shared/utils/ruta.ts`, `app/composables/useBase.ts` | Prefijan las rutas de imágenes con la subcarpeta de publicación (`app.baseURL`) | `[VERIFICADO]` |
+| `.github/workflows/deploy-pages.yml`, `scripts/servir-estatico.mjs`, `scripts/probar-pages.mjs` | Despliegue en Pages, emulador de Pages y prueba de navegador de la versión estática | `[VERIFICADO]` |
 | `scripts/probar-carrito.mjs` | Prueba en Chrome real: persistencia, vencimiento, corrupción, pestañas, almacenamiento bloqueado | `[VERIFICADO]` `npm run probar:carrito` |
 | `app/theme/mostrador.ts`, `app/assets/css/base.css`, `app/app.config.ts` | Tema PrimeVue, tokens CSS y datos de la tienda | `[VERIFICADO]` |
-| `tests/`, `scripts/*.test.mjs` | 165 tests con `node:test` | `[VERIFICADO]` `npm test` |
+| `tests/`, `scripts/*.test.mjs` | 173 tests con `node:test` | `[VERIFICADO]` `npm test` |
 
 ## Cómo se comunican
 Todo ocurre en un proceso de Nuxt. El catálogo se importa en el servidor (y queda en el bundle del cliente). Las rutas de servidor (`sitemap.xml`, `robots.txt`, `llms.txt`) están en este mismo repo (C-02). No hay servicios propios ni base de datos. `[VERIFICADO]`
@@ -48,6 +50,7 @@ Todo ocurre en un proceso de Nuxt. El catálogo se importa en el servidor (y que
 7. **El servidor no conoce el carrito:** el HTML llega sin contador, sin cantidades y sin la sección de vistos, y el navegador los completa al montar. Por eso el SEO y el verificador no cambian. `/carrito` tiene `noindex` y no está en el sitemap ni en `llms.txt`. `[VERIFICADO]`
 8. **Pago:** en `/carrito`, "Finalizar compra" manda a `POST /api/checkout` solo ids y cantidades; el servidor recalcula todo desde el catálogo, crea la orden en Mercado Pago (`POST /v1/orders`), guarda el id de la orden en una cookie `httpOnly` y devuelve la `checkout_url`; el navegador va a pagar al sitio de Mercado Pago. `[VERIFICADO]` contra el simulado.
 9. **Vuelta:** Mercado Pago redirige a `/compra/resultado`; la página le pide a `GET /api/pago/estado` el estado real (el servidor consulta `GET /v1/orders/{id}` con la orden de la cookie). Solo si está aprobado se vacía el carrito y se borra la cookie. Lo que diga la URL (`status=approved`) no cuenta. `[VERIFICADO]` contra el simulado.
+10. **Publicación estática (GitHub Pages):** cada `push` a `main` corre `.github/workflows/deploy-pages.yml`: valida el catálogo, corre los tests, genera el sitio con `nuxt generate` (variables `NUXT_ESTATICO`, `NUXT_APP_BASE_URL`, `NUXT_PUBLIC_SITE_URL`, `NUXT_PUBLIC_PAGO_DISPONIBLE=false`) y publica `.output/public` en `https://alegonzalezz.github.io/ecommerce_prueba/`. Sin servidor, el pago no existe: el carrito, la ficha y el resultado muestran el aviso de demostración y no llaman a `/api/*`. `[VERIFICADO]` sitio real.
 
 ## Decisiones de diseño relevantes
 - Un solo layout responsive con breakpoint en 768 px; el hero y la ficha usan `<picture>` con la imagen del formato. `[VERIFICADO]`

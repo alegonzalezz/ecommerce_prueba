@@ -1,20 +1,20 @@
 # Tareas: Publicación estática en GitHub Pages
 
-**Spec:** [spec.md](spec.md) · **Plan:** [plan.md](plan.md) · **Estado general:** pendiente   <!-- pendiente | en curso | terminada -->
+**Spec:** [spec.md](spec.md) · **Plan:** [plan.md](plan.md) · **Estado general:** terminada   <!-- pendiente | en curso | terminada -->
 
 > Spec `aprobada` el 2026-11-10.
 
 | ID | Tarea | Capa | Depende de | Estado |
 |---|---|---|---|---|
-| T01 | `conBase` y `useBase`, con tests | Compartido / Tests | — | [ ] |
-| T02 | Usar el prefijo en hero, cards, ficha, carrito, precargas y página de error | Front | T01 | [ ] |
-| T03 | `pagoDisponible`: carrito, ficha y resultado en modo demostración | Front | T01 | [ ] |
-| T04 | Configuración de generación estática, `.nojekyll` y script `generate:pages` | Infra | T02, T03 | [ ] |
-| T05 | Emulador de Pages y prueba de navegador (`probar:pages`) | Tests | T04 | [ ] |
-| T06 | Verificar en local: `verificar:seo`, `probar:pages`, Lighthouse | Tests | T05 | [ ] |
-| T07 | Workflow de despliegue y `README.md` | Infra / Docs | T04 | [ ] |
-| T08 | Commit, push, habilitar Pages y verificar el sitio real | Infra / Tests | T06, T07 | [ ] |
-| T09 | Documentos permanentes y preguntas abiertas | Docs | T08 | [ ] |
+| T01 | `conBase` y `useBase`, con tests | Compartido / Tests | — | [x] |
+| T02 | Usar el prefijo en hero, cards, ficha, carrito, precargas y página de error | Front | T01 | [x] |
+| T03 | `pagoDisponible`: carrito, ficha y resultado en modo demostración | Front | T01 | [x] |
+| T04 | Configuración de generación estática, `.nojekyll` y script `generate:pages` | Infra | T02, T03 | [x] |
+| T05 | Emulador de Pages y prueba de navegador (`probar:pages`) | Tests | T04 | [x] |
+| T06 | Verificar en local: `verificar:seo`, `probar:pages`, Lighthouse | Tests | T05 | [x] |
+| T07 | Workflow de despliegue y `README.md` | Infra / Docs | T04 | [x] |
+| T08 | Commit, push, habilitar Pages y verificar el sitio real | Infra / Tests | T06, T07 | [x] |
+| T09 | Documentos permanentes y preguntas abiertas | Docs | T08 | [x] |
 
 Server routes, Pagos, Mails, SEO (sin cambios de código) y Data: **sin cambios**. DB: no aplica a este repo.
 
@@ -31,11 +31,11 @@ Cada tarea tiene como criterio de hecho lo indicado en la spec; el detalle de ar
 - Al implementar: marcar `[x]` y actualizar el estado general. Si cambia algo respecto de la spec, se actualiza la spec en el mismo trabajo.
 
 ## Checklist de cierre
-- [ ] Tests pasando (`npm test`) y `npm run build` en verde
-- [ ] PR mergeado a la rama siguiente: se publica por `push` a `main`
-- [ ] Desplegado y probado en el primer ambiente (Pages)
+- [x] Tests pasando (`npm test`) y `npm run build` en verde
+- [x] PR mergeado a la rama siguiente: se publica por `push` a `main`
+- [x] Desplegado y probado en el primer ambiente (Pages)
 - [ ] Pago probado con Mercado Pago sandbox: **no aplica** en Pages
 - [ ] Credenciales productivas: **no aplica**
-- [ ] Feature flag (`NUXT_PUBLIC_PAGO_DISPONIBLE`) verificado en ambos valores
-- [ ] Métricas observadas
-- [ ] Spec actualizada si algo cambió
+- [x] Feature flag (`NUXT_PUBLIC_PAGO_DISPONIBLE`) verificado en ambos valores
+- [x] Métricas observadas
+- [x] Spec actualizada si algo cambió

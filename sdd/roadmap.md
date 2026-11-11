@@ -6,6 +6,7 @@
 | Ficha de producto con SEO | Página `/producto/<slug>` y SEO para buscadores y asistentes de IA | <pendiente> | en desarrollo | `ecommerce_prueba` | EC 23/23 (fases 1-3) | `initiatives/2026-11-10-ficha-producto/` |
 | Carrito y vistos recientemente en el navegador | Carrito persistente 2 h y productos vistos, guardados en `localStorage` con vencimiento | <pendiente> | en desarrollo | `ecommerce_prueba` | EC 19/19 (fases 1-3) | `initiatives/2026-11-10-carrito-persistente/` |
 | Pago con Mercado Pago (sandbox) | Checkout Pro vía Orders API: crear la orden, pagar y verificar el estado | <pendiente> | en desarrollo | `ecommerce_prueba` | EC 23/25 (fases 1-3; la 4 espera credenciales) | `initiatives/2026-11-10-mercadopago-sandbox/` |
+| Publicación en GitHub Pages (sin pago) | Sitio estático público de demostración | <pendiente> | en producción | `ecommerce_prueba` | EC 9/9 | `initiatives/2026-11-10-github-pages/` |
 
 ## Convenciones
 
