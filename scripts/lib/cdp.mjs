@@ -10,7 +10,7 @@ export const dormir = (ms) => new Promise((r) => setTimeout(r, ms))
 const CHROME = process.env.CHROME_PATH ?? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 
 export class Pestana {
-  constructor(ws, { base, salida }) { this.ws = ws; this.base = base; this.salida = salida; this.id = 0; this.pend = new Map(); this.consola = [] }
+  constructor(ws, { base, salida }) { this.ws = ws; this.base = base; this.salida = salida; this.id = 0; this.pend = new Map(); this.consola = []; this.respuestas = [] }
 
   static async abrir(wsUrl, opciones) {
     const t = new Pestana(new WebSocket(wsUrl), opciones)
@@ -20,6 +20,7 @@ export class Pestana {
       if (msg.id && t.pend.has(msg.id)) { t.pend.get(msg.id)(msg); t.pend.delete(msg.id) }
       else if (msg.method === 'Runtime.consoleAPICalled' && ['error', 'warning'].includes(msg.params.type)) t.consola.push(`${msg.params.type}: ${msg.params.args.map((a) => a.value ?? a.description).join(' ')}`)
       else if (msg.method === 'Runtime.exceptionThrown') t.consola.push(`excepción: ${msg.params.exceptionDetails.exception?.description ?? msg.params.exceptionDetails.text}`)
+      else if (msg.method === 'Network.responseReceived') t.respuestas.push({ url: msg.params.response.url, estado: msg.params.response.status, tipo: msg.params.type })
       else if (msg.method === 'Log.entryAdded' && ['error', 'warning'].includes(msg.params.entry.level)) t.consola.push(`${msg.params.entry.level}: ${msg.params.entry.text} ${msg.params.entry.url ?? ''}`)
     })
     for (const m of ['Page.enable', 'Runtime.enable', 'Log.enable', 'Network.enable']) await t.enviar(m)

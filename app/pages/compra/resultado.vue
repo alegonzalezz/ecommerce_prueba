@@ -2,7 +2,8 @@
 const { tienda } = useAppConfig()
 const route = useRoute()
 const carrito = useCarrito()
-const modoPrueba = useRuntimeConfig().public.modoPrueba
+const { modoPrueba, pagoDisponible } = useRuntimeConfig().public
+const aviso = computed(() => (pagoDisponible ? (modoPrueba ? 'Modo de prueba: no se cobra dinero real.' : '') : 'Versión de demostración: el pago online no está disponible.'))
 
 // Página personal y sin contenido propio: no se indexa.
 useSeoMeta({ title: `Resultado de tu pago | ${tienda.nombre}`, robots: 'noindex, nofollow' })
@@ -14,6 +15,11 @@ const referencia = ref('')
 const total = ref<number | null>(null)
 
 async function verificar() {
+  // Sin servidor (GitHub Pages) no hay a quién consultar: no hay compra para verificar.
+  if (!pagoDisponible) {
+    estado.value = 'sin-compra'
+    return
+  }
   estado.value = 'verificando'
   try {
     // El estado NO sale de la URL: se le pregunta a Mercado Pago a través de nuestro servidor.
@@ -50,7 +56,7 @@ const volverAlCarrito = computed(() => ['pendiente', 'rechazado', 'cancelado', '
 
 <template>
   <section class="resultado contenedor" aria-labelledby="titulo-resultado">
-    <p v-if="modoPrueba" class="modo-prueba" role="note">Modo de prueba: no se cobra dinero real.</p>
+    <p v-if="aviso" class="modo-prueba" role="note">{{ aviso }}</p>
 
     <!-- aria-live: el lector de pantalla anuncia el resultado cuando reemplaza a "Verificando…". -->
     <div role="status" aria-live="polite">

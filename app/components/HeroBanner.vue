@@ -6,6 +6,7 @@ defineProps<{
 }>()
 
 const { tienda } = useAppConfig()
+const ruta = useBase()
 </script>
 
 <template>
@@ -29,9 +30,9 @@ const { tienda } = useAppConfig()
 
       <div class="hero__marco">
         <picture>
-          <source media="(min-width: 768px)" srcset="/img/hero-desktop.webp" width="1200" height="1000" />
+          <source media="(min-width: 768px)" :srcset="ruta('/img/hero-desktop.webp')" width="1200" height="1000" />
           <img
-            src="/img/hero-mobile.webp"
+            :src="ruta('/img/hero-mobile.webp')"
             alt="Herramientas de ferretería sobre un mostrador"
             width="800"
             height="900"

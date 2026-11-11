@@ -1,0 +1,65 @@
+# Publica la tienda como sitio estático en GitHub Pages en cada push a main.
+# Pages no ejecuta servidor: la versión publicada es de demostración, sin pago online
+# (el pago con Mercado Pago necesita rutas de servidor; ver iniciativa github-pages en sdd/).
+name: Publicar en GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  desplegar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+
+      - name: Configurar Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Instalar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      # Si el catálogo o los tests fallan, no se publica nada.
+      - name: Validar el catálogo
+        run: npm run catalogo:validar
+
+      - name: Correr los tests
+        run: npm test
+
+      - name: Generar el sitio estático
+        run: npx nuxt generate
+        env:
+          NUXT_ESTATICO: 'true'
+          NUXT_APP_BASE_URL: ${{ steps.pages.outputs.base_path }}/
+          NUXT_PUBLIC_SITE_URL: ${{ steps.pages.outputs.base_url }}
+          NUXT_PUBLIC_PAGO_DISPONIBLE: 'false'
+
+      - name: Subir el sitio
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .output/public
+
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4

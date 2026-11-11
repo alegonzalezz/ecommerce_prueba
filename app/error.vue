@@ -20,9 +20,9 @@ useSeoMeta({ title: titulo, robots: 'noindex, nofollow' })
       <p class="error__codigo" aria-hidden="true">{{ error.statusCode }}</p>
       <h1 id="titulo-error" class="error__titulo">{{ titulo }}</h1>
       <p class="error__mensaje">{{ mensaje }}</p>
-      <a href="/" class="error__enlace">
+      <NuxtLink to="/" class="error__enlace">
         <Button label="Volver al inicio" tabindex="-1" />
-      </a>
+      </NuxtLink>
     </section>
   </NuxtLayout>
 </template>

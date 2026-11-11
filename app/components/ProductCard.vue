@@ -3,6 +3,7 @@ import type { Producto } from '#shared/types/catalogo'
 
 const props = defineProps<{ producto: Producto }>()
 
+const ruta = useBase()
 const descuento = computed(() => calcularDescuento(props.producto.precio, props.producto.precioAnterior))
 const sinStock = computed(() => props.producto.stock === 0)
 </script>
@@ -13,7 +14,7 @@ const sinStock = computed(() => props.producto.stock === 0)
       <div class="card__imagen">
         <!-- alt vacío: el nombre ya está en el texto del enlace, repetirlo duplicaría la lectura. -->
         <img
-          :src="producto.imagenes.card.src"
+          :src="ruta(producto.imagenes.card.src)"
           alt=""
           width="480"
           height="480"

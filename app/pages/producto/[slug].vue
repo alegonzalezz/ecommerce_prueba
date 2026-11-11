@@ -1,6 +1,8 @@
 <script setup lang="ts">
 const route = useRoute()
 const { tienda } = useAppConfig()
+const ruta = useBase()
+const pagoDisponible = useRuntimeConfig().public.pagoDisponible
 const { buscar } = useCatalogo()
 
 const producto = buscar(String(route.params.slug))
@@ -74,8 +76,8 @@ useHead({
   link: [
     { rel: 'canonical', href: url },
     // Precarga solo la imagen del formato que corresponde.
-    { rel: 'preload', as: 'image', href: producto.imagenes.mobile.src, media: '(max-width: 767px)', fetchpriority: 'high' },
-    { rel: 'preload', as: 'image', href: producto.imagenes.desktop.src, media: '(min-width: 768px)', fetchpriority: 'high' },
+    { rel: 'preload', as: 'image', href: ruta(producto.imagenes.mobile.src), media: '(max-width: 767px)', fetchpriority: 'high' },
+    { rel: 'preload', as: 'image', href: ruta(producto.imagenes.desktop.src), media: '(min-width: 768px)', fetchpriority: 'high' },
   ],
   meta: [
     { property: 'og:type', content: 'product' },
@@ -99,12 +101,12 @@ useHead({
         <picture>
           <source
             media="(min-width: 768px)"
-            :srcset="producto.imagenes.desktop.src"
+            :srcset="ruta(producto.imagenes.desktop.src)"
             width="1200"
             height="900"
           />
           <img
-            :src="producto.imagenes.mobile.src"
+            :src="ruta(producto.imagenes.mobile.src)"
             :alt="producto.imagenes.mobile.alt"
             width="800"
             height="1000"
@@ -145,7 +147,9 @@ useHead({
             Tenés {{ enCarrito }} {{ enCarrito === 1 ? 'unidad' : 'unidades' }} en tu carrito.
             <NuxtLink to="/carrito">Ver carrito</NuxtLink>
           </p>
-          <p class="ficha__aviso">Pagás de forma segura con Mercado Pago.</p>
+          <p class="ficha__aviso">
+            {{ pagoDisponible ? 'Pagás de forma segura con Mercado Pago.' : 'Versión de demostración: el pago online no está disponible.' }}
+          </p>
         </div>
       </div>
     </div>

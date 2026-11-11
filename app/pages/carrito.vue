@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const { tienda } = useAppConfig()
 const carrito = useCarrito()
+const ruta = useBase()
 
 // El carrito es personal: no se indexa (y no está en el sitemap ni en llms.txt).
 useSeoMeta({ title: `Tu carrito | ${tienda.nombre}`, robots: 'noindex, nofollow' })
@@ -8,14 +9,16 @@ useSeoMeta({ title: `Tu carrito | ${tienda.nombre}`, robots: 'noindex, nofollow'
 const unidadesTexto = (n: number) => `${n} ${n === 1 ? 'unidad' : 'unidades'}`
 
 // Mientras se use el sandbox (C-03) se avisa que no se cobra dinero real.
-const modoPrueba = useRuntimeConfig().public.modoPrueba
+const { modoPrueba, pagoDisponible } = useRuntimeConfig().public
+// En la versión de GitHub Pages no hay servidor: el pago online no existe (ver iniciativa github-pages).
+const aviso = computed(() => (pagoDisponible ? (modoPrueba ? 'Modo de prueba: no se cobra dinero real.' : '') : 'Versión de demostración: el pago online no está disponible.'))
 
 // Pago con Mercado Pago: el servidor recalcula todo desde el catálogo; acá solo mandamos ids y cantidades.
 const pagando = ref(false)
 const errorPago = ref('')
 
 async function finalizarCompra() {
-  if (pagando.value || carrito.lineas.value.length === 0) return
+  if (!pagoDisponible || pagando.value || carrito.lineas.value.length === 0) return
   pagando.value = true
   errorPago.value = ''
   try {
@@ -43,7 +46,7 @@ onMounted(() => {
 <template>
   <section class="carrito contenedor" aria-labelledby="titulo-carrito">
     <h1 id="titulo-carrito" class="carrito__titulo">Tu carrito</h1>
-    <p v-if="modoPrueba" class="modo-prueba" role="note">Modo de prueba: no se cobra dinero real.</p>
+    <p v-if="aviso" class="modo-prueba" role="note">{{ aviso }}</p>
 
     <!-- Hasta leer lo guardado no sabemos si está vacío: no mostramos "vacío" por error. -->
     <p v-if="!carrito.cargado.value" class="carrito__cargando" role="status">Cargando tu carrito…</p>
@@ -66,7 +69,7 @@ onMounted(() => {
           <li v-for="linea in carrito.lineas.value" :key="linea.producto.id" class="linea">
             <img
               class="linea__imagen"
-              :src="linea.producto.imagenes.card.src"
+              :src="ruta(linea.producto.imagenes.card.src)"
               alt=""
               width="96"
               height="96"
@@ -118,13 +121,13 @@ onMounted(() => {
 
           <Button
             class="resumen__comprar"
-            :label="pagando ? 'Redirigiendo a Mercado Pago…' : 'Finalizar compra'"
-            :disabled="pagando || carrito.lineas.value.length === 0"
+            :label="!pagoDisponible ? 'Pago no disponible' : pagando ? 'Redirigiendo a Mercado Pago…' : 'Finalizar compra'"
+            :disabled="!pagoDisponible || pagando || carrito.lineas.value.length === 0"
             @click="finalizarCompra"
           />
           <!-- role=alert: el lector de pantalla anuncia el error apenas aparece. -->
           <p v-if="errorPago" class="resumen__error" role="alert">{{ errorPago }}</p>
-          <p class="resumen__aviso">Pagás de forma segura en Mercado Pago.</p>
+          <p v-if="pagoDisponible" class="resumen__aviso">Pagás de forma segura en Mercado Pago.</p>
 
           <button type="button" class="resumen__vaciar" @click="carrito.vaciar()">Vaciar carrito</button>
           <p class="resumen__guardado">Tu carrito se guarda en este navegador por 2 horas desde el último cambio.</p>

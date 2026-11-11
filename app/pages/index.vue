@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { tienda } = useAppConfig()
+const ruta = useBase()
 const { carruseles, categorias } = useCatalogo()
 
 // Vistos recientemente: aparece al montar, solo si la persona abrió productos (el servidor no la incluye).
@@ -33,8 +34,8 @@ useHead({
   link: [
     { rel: 'canonical', href: urlAbsoluta(siteUrl, '/') },
     // Precarga solo la imagen del hero que corresponde al formato.
-    { rel: 'preload', as: 'image', href: '/img/hero-mobile.webp', media: '(max-width: 767px)', fetchpriority: 'high' },
-    { rel: 'preload', as: 'image', href: '/img/hero-desktop.webp', media: '(min-width: 768px)', fetchpriority: 'high' },
+    { rel: 'preload', as: 'image', href: ruta('/img/hero-mobile.webp'), media: '(max-width: 767px)', fetchpriority: 'high' },
+    { rel: 'preload', as: 'image', href: ruta('/img/hero-desktop.webp'), media: '(min-width: 768px)', fetchpriority: 'high' },
   ],
   script: [{ type: 'application/ld+json', innerHTML: serializarJsonLd(jsonLdSitio(siteUrl, tienda.nombre)) }],
 })

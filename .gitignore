@@ -9,3 +9,6 @@ node_modules
 .env
 .env.*
 !.env.example
+
+# Enlace que crea `nuxt generate` hacia .output/public
+dist

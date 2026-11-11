@@ -14,7 +14,11 @@
     "probar:carrito": "node scripts/probar-carrito.mjs",
     "mercadopago:simulado": "node scripts/mercadopago-simulado.mjs",
     "probar:pago": "node scripts/probar-pago.mjs",
-    "probar:pago-navegador": "node scripts/probar-pago-navegador.mjs"
+    "probar:pago-navegador": "node scripts/probar-pago-navegador.mjs",
+    "generate:pages": "NUXT_ESTATICO=true nuxt generate",
+    "pages:build": "NUXT_ESTATICO=true NUXT_APP_BASE_URL=/ecommerce_prueba/ NUXT_PUBLIC_SITE_URL=http://localhost:4173/ecommerce_prueba NUXT_PUBLIC_PAGO_DISPONIBLE=false nuxt generate",
+    "pages:servir": "node scripts/servir-estatico.mjs .output/public /ecommerce_prueba 4173",
+    "probar:pages": "node scripts/probar-pages.mjs"
   },
   "devDependencies": {
     "ajv": "^8.20.0",
